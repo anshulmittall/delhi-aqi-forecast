@@ -1,0 +1,15 @@
+column,missing_frac,missing_days,longest_gap_days,dropped
+pm25,0.001,2,2,False
+pm10,0.038,77,58,False
+no,0.001,2,2,False
+no2,0.001,2,2,False
+nox,0.0,0,0,False
+nh3,0.004,9,2,False
+co,0.0,0,0,False
+so2,0.055,110,81,False
+o3,0.042,84,81,False
+benzene,0.0,0,0,False
+toluene,0.0,0,0,False
+xylene,0.389,781,606,True
+aqi,0.005,10,4,False
+aqi_bucket,0.005,10,4,False

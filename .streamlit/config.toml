@@ -1,0 +1,5 @@
+# Light theme to match the report figures, which are drawn on a light background.
+[theme]
+base = "light"
+primaryColor = "#2a78d6"
+backgroundColor = "#fcfcfb"

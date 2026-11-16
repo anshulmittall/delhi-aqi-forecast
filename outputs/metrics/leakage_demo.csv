@@ -1,0 +1,3 @@
+model,MAE,RMSE,R2,MAPE_pct,bias,bucket_accuracy_pct,direction_accuracy_pct
+Honest XGBoost,26.02,36.75,0.91,13.15,3.49,72.45,72.83
+Leaky XGBoost (sees tomorrow's PM2.5),12.46,19.16,0.98,6.67,3.2,88.68,86.79

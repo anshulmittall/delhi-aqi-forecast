@@ -1,0 +1,29 @@
+# Pinned for Python 3.13.
+#
+# pandas is held below 3.0 on purpose: the system-wide install here is pandas
+# 3.0, whose new default string dtype and copy-on-write semantics still break
+# seaborn and shap in places. 2.x keeps the whole stack boring and predictable.
+# numpy is held below 2.5 to match: pandas 2.3 still uses a timedelta form
+# that numpy 2.5 deprecates, which warns on something as basic as
+# pd.Timedelta(days=1).
+pandas>=2.2,<3
+numpy>=1.26,<2.5
+
+# Modelling
+scikit-learn>=1.5
+xgboost>=2.1
+joblib>=1.4
+
+# Plots and explainability
+# matplotlib below 3.11: seaborn 0.13 (the latest) still passes the `vert`
+# argument that 3.11 deprecated, so every box plot would print a warning.
+matplotlib>=3.9,<3.11
+seaborn>=0.13
+shap>=0.46
+
+# Data fetching (Kaggle dataset + Open-Meteo weather API)
+kagglehub>=0.3
+requests>=2.32
+
+# Demo app
+streamlit>=1.38

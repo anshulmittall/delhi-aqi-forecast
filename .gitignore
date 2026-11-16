@@ -1,0 +1,14 @@
+.venv/
+__pycache__/
+*.pyc
+.DS_Store
+
+# Raw data is large and re-downloadable by scripts/01_download_data.py
+data/raw/
+
+# Personal notes, drafts and the university template stay local
+docs/viva/
+docs/milestone_2/drafts/
+docs/milestone_2/milestone_2_summary.md
+docs/template/
+/Mini Project Report Template.docx

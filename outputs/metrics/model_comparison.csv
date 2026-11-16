@@ -1,0 +1,6 @@
+model,cv_MAE,MAE,RMSE,R2,MAPE_pct,bias,bucket_accuracy_pct,direction_accuracy_pct
+Persistence (tomorrow = today),,36.43,51.12,0.83,17.08,0.11,64.53,1.51
+7-day average,,55.57,76.89,0.63,27.07,0.19,47.92,52.08
+Ridge regression,37.59,27.84,38.95,0.9,14.57,3.86,69.06,74.72
+Random forest,43.79,27.02,37.12,0.91,14.17,6.0,73.96,72.08
+XGBoost,43.79,26.02,36.75,0.91,13.15,3.49,72.45,72.83
