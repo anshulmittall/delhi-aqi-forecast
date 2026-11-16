@@ -32,6 +32,7 @@ python scripts/05_train_eval.py         # train, tune, score, save model (~1 min
 python scripts/06_shap_analysis.py      # SHAP explanations
 python scripts/07_covid_case_study.py   # frozen model vs the lockdown
 python scripts/08_report_figures.py     # report-only figures + reports/report_numbers.csv
+python scripts/09_existing_projects_comparison.py  # the usual GitHub approach vs this project
 
 # one-day forecast with its SHAP explanation (viva demo)
 python scripts/predict_day.py 2019-11-03
@@ -50,7 +51,7 @@ downloads are cached and results are deterministic (fixed random seed).
 scripts/
   common.py               split dates, AQI categories, scoring, plot style
   features.py             how every model input is built (shared with the app)
-  01_download_data.py ... 08_report_figures.py
+  01_download_data.py ... 09_existing_projects_comparison.py
   predict_day.py          one-day forecast + SHAP explanation (demo)
 app/streamlit_app.py      3 tabs: explore a day, what-if, model card
 data/raw/                 downloads (not committed; step 1 recreates them)
@@ -221,6 +222,26 @@ Source: `outputs/metrics/covid_regime.csv`. Mean AQI for 22 Mar to 1 Jul was
 - **Its 29% advantage over persistence disappeared.** Persistence was 7%
   better during lockdown. The patterns it learned stopped applying, which is
   what a distribution shift looks like.
+
+## Compared with existing projects
+
+Most AQI projects on GitHub that use this Kaggle dataset predict **today's**
+AQI from **today's** pollutants with a random train/test split, and none of the
+six checked compares against a baseline. CPCB computes AQI from those
+pollutants, so that mostly re-learns the formula rather than forecasting.
+Step 09 runs that approach on the same Delhi data with the same XGBoost
+settings:
+
+| Approach | Test days | MAE | R² |
+| --- | --- | --- | --- |
+| Existing method as published (same-day, random split) | 380 | 26.08 | 0.90 |
+| The same method used as a next-day forecast | 265 | 30.59 | 0.90 |
+| This project: persistence | 265 | 36.43 | 0.83 |
+| **This project: next-day XGBoost** | 265 | **26.02** | **0.91** |
+
+Source: `outputs/metrics/existing_projects_comparison.csv`. As a real
+forecast, this project's error is 14.9% lower. The repositories checked are
+listed in the final report (Section 3.7.8, references [31]–[36]).
 
 ## Limitations and future work
 

@@ -1,0 +1,5 @@
+approach,test_days,MAE,R2,note
+"Existing method: same-day AQI from same-day pollutants, random 80/20 split",380,26.08,0.9,
+Existing method used as a next-day forecast,265,30.59,0.9,
+This project: Persistence (tomorrow = today),265,36.43,0.83,
+This project: XGBoost,265,26.02,0.91,MAE 14.9% lower than the existing method as a forecast
